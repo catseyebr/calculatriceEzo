@@ -1,0 +1,14 @@
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\bin\Debug\net8.0\CalculatriceEzo.exe
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\bin\Debug\net8.0\CalculatriceEzo.deps.json
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\bin\Debug\net8.0\CalculatriceEzo.runtimeconfig.json
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\bin\Debug\net8.0\CalculatriceEzo.dll
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\bin\Debug\net8.0\CalculatriceEzo.pdb
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.AssemblyInfoInputs.cache
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.AssemblyInfo.cs
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.csproj.CoreCompileInputs.cache
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.dll
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\refint\CalculatriceEzo.dll
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.pdb
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.genruntimeconfig.cache
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\ref\CalculatriceEzo.dll
