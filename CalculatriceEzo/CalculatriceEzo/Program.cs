@@ -4,12 +4,18 @@
     { 
         static void Main(string[] args)
         {
+            
             Calculatrice calc = new Calculatrice();
             double result;
-            Console.WriteLine("Entrez une expression mathématique");
-            string expression = Console.ReadLine();
-            result = calc.Calculate(expression);
-            Console.WriteLine(result);
+            string expression = "0";
+
+            while (expression != "sortie")
+            {
+                Console.WriteLine("Entrez une expression mathématique");
+                expression = Console.ReadLine();
+                result = calc.Calculate(expression);
+                Console.WriteLine(result);
+            }
         }
     }
 }
