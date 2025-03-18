@@ -12,3 +12,4 @@ C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo
 C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.pdb
 C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.genruntimeconfig.cache
 C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\ref\CalculatriceEzo.dll
+C:\Users\eduar\OneDrive\Projects\calculatriceEzo\CalculatriceEzo\CalculatriceEzo\obj\Debug\net8.0\CalculatriceEzo.sourcelink.json
