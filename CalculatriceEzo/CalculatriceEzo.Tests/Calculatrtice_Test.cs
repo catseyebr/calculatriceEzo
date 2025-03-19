@@ -8,6 +8,7 @@ namespace CalculatriceEzo.Tests
         [InlineData("1 + -1", 0)]
         [InlineData("-1 - -1", 0)]
         [InlineData("5-4", 1)]
+        [InlineData("5*2", 10)]
         public void Calculatrice_Calculate(string expression, double result)
         {
             var calc = new Calculatrice();

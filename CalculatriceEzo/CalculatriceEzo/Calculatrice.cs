@@ -10,7 +10,8 @@ namespace CalculatriceEzo
             _operations = new Dictionary<string, IOperation>
             {
                 { "+", new Addition() },
-                { "-", new Subtraction()}
+                { "-", new Subtraction()},
+                { "*", new Multiplication()}
             };
         }
 
@@ -27,7 +28,6 @@ namespace CalculatriceEzo
         {
             var elements = new List<string>();
             string chiffre = "";
-            bool estNegatif = false;
 
             for (int i = 0; i < expression.Length; i++)
             {
@@ -64,7 +64,7 @@ namespace CalculatriceEzo
                 {
                     string ope = elements[i];
                     
-                    if(ope == "+" || ope == "-")
+                    if(ope == "+" || ope == "-" || ope == "*")
                     {
                         double a = Convert.ToDouble(elements[i - 1]);
                         double b = Convert.ToDouble(elements[i + 1]);
