@@ -12,7 +12,8 @@ namespace CalculatriceEzo
                 { "+", new Addition() },
                 { "-", new Subtraction()},
                 { "*", new Multiplication()},
-                { "/", new Division()}
+                { "/", new Division()},
+                { "^", new Power()}
             };
         }
 
@@ -86,7 +87,7 @@ namespace CalculatriceEzo
                 {
                     string ope = elements[i];
 
-                    if (ope == "*" || ope == "/")
+                    if (ope == "^" || ope == "*" || ope == "/")
                     {
                         double a = Convert.ToDouble(elements[i - 1].Replace(".", ","));
                         double b = Convert.ToDouble(elements[i + 1].Replace(".", ","));
