@@ -27,10 +27,17 @@ namespace CalculatriceEzo
         {
             var elements = new List<string>();
             string chiffre = "";
+            bool estNegatif = false;
 
-            foreach (char c in expression)
+            for (int i = 0; i < expression.Length; i++)
             {
+                char c = expression[i];
+
                 if (char.IsDigit(c) || c == '.')
+                {
+                    chiffre += c;
+                }
+                else if (c == '-' && (i == 0 || "+-".Contains(expression[i -1])))
                 {
                     chiffre += c;
                 }
