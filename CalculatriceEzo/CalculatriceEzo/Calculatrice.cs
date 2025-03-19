@@ -2,7 +2,7 @@
 
 namespace CalculatriceEzo
 {
-    class Calculatrice
+    public class Calculatrice
     {
         private readonly Dictionary<string, IOperation> _operations;
         public Calculatrice()
