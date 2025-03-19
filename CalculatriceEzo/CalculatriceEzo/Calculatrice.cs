@@ -16,6 +16,8 @@ namespace CalculatriceEzo
 
         public double EvaluerExpression(string expression)
         {
+            expression = expression.Replace(" ", "");
+
             var elements = ClassifierExpression(expression);
             return Calculate(elements);
            
