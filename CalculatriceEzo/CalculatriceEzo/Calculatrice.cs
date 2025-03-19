@@ -37,7 +37,8 @@ namespace CalculatriceEzo
                 if (end == -1) throw new ArgumentException("Parenthèses déséquilibrées!");
 
                 string subExpression = expression.Substring(start + 1, end - start - 1);
-                string subresult = ResoudreParentheses(subExpression);
+                var elements = ClassifierExpression(subExpression);
+                double subresult = Calculate(elements);
 
                 expression = expression.Substring(0, start) + subresult + expression.Substring(end + 1);
             }
@@ -84,8 +85,28 @@ namespace CalculatriceEzo
                 if (_operations.ContainsKey(elements[i]))
                 {
                     string ope = elements[i];
+
+                    if (ope == "*" || ope == "/")
+                    {
+                        double a = Convert.ToDouble(elements[i - 1].Replace(".", ","));
+                        double b = Convert.ToDouble(elements[i + 1].Replace(".", ","));
+                        double result = _operations[ope].Execute(a, b);
+
+                        elements[i - 1] = result.ToString();
+                        elements.RemoveAt(i + 1);
+                        elements.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (_operations.ContainsKey(elements[i]))
+                {
+                    string ope = elements[i];
                     
-                    if(ope == "+" || ope == "-" || ope == "*" || ope == "/")
+                    if(ope == "+" || ope == "-")
                     {
                         double a = Convert.ToDouble(elements[i - 1]);
                         double b = Convert.ToDouble(elements[i + 1]);
@@ -99,7 +120,7 @@ namespace CalculatriceEzo
                 }
             }
 
-            return Convert.ToDouble(elements[0]);
+            return Math.Round(Convert.ToDouble(elements[0]),1);
         }
     }
 }

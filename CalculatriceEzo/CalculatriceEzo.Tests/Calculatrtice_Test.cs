@@ -11,10 +11,12 @@ namespace CalculatriceEzo.Tests
         [InlineData("5*2", 10)]
         [InlineData("(2+5)*3", 21)]
         [InlineData("10/2", 5)]
+        [InlineData("2+2*5+5", 17)]
+        [InlineData("2.8*3-1",7.4)]
         public void Calculatrice_Calculate(string expression, double result)
         {
             var calc = new Calculatrice();
-            Assert.Equal(calc.EvaluerExpression(expression), result);
+            Assert.Equal(calc.EvaluerExpression(expression), Math.Round(result,1));
         }        
     }
 }
