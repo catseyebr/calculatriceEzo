@@ -17,11 +17,31 @@ namespace CalculatriceEzo
 
         public double EvaluerExpression(string expression)
         {
-            expression = expression.Replace(" ", "");
+            expression = ResoudreParentheses(expression);
 
             var elements = ClassifierExpression(expression);
             return Calculate(elements);
            
+        }
+
+        private string ResoudreParentheses(string expression)
+        {
+            expression = expression.Replace(" ", "");
+
+            while(expression.Contains("("))
+            {
+                int start = expression.LastIndexOf('(');
+                int end = expression.IndexOf(')', start);
+
+                if (end == -1) throw new ArgumentException("Parenthèses déséquilibrées!");
+
+                string subExpression = expression.Substring(start + 1, end - start - 1);
+                string subresult = ResoudreParentheses(subExpression);
+
+                expression = expression.Substring(0, start) + subresult + expression.Substring(end + 1);
+            }
+
+            return expression;
         }
 
         private List<string> ClassifierExpression(string expression)
