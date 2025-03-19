@@ -13,7 +13,7 @@
             {
                 Console.WriteLine("Entrez une expression mathématique");
                 expression = Console.ReadLine();
-                result = calc.Calculate(expression);
+                result = calc.EvaluerExpression(expression);
                 Console.WriteLine(result);
             }
         }

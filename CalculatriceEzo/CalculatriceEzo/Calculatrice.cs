@@ -1,37 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CalculatriceEzo.Operations;
 
 namespace CalculatriceEzo
 {
     class Calculatrice
     {
+        private readonly Dictionary<string, IOperation> _operations;
         public Calculatrice()
         {
-            
+            _operations = new Dictionary<string, IOperation>
+            {
+                { "+", new Addition() },
+                { "-", new Subtraction()}
+            };
         }
 
-        public double Calculate(string expression)
+        public double EvaluerExpression(string expression)
         {
-            double result;
-            if (expression.Contains("+"))
+            var elements = ClassifierExpression(expression);
+            return Calculate(elements);
+           
+        }
+
+        private List<string> ClassifierExpression(string expression)
+        {
+            var elements = new List<string>();
+            string chiffre = "";
+
+            foreach (char c in expression)
             {
-                string[] operands = expression.Split('+');
-                result = double.Parse(operands[0]) + double.Parse(operands[1]);
+                if (char.IsDigit(c) || c == '.')
+                {
+                    chiffre += c;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(chiffre))
+                    {
+                        elements.Add(chiffre);
+                        chiffre = "";
+                    }
+                    elements.Add(c.ToString());
+                }
             }
-            else if (expression.Contains("-"))
+
+            if(!string .IsNullOrEmpty(chiffre)) elements.Add(chiffre);
+            return elements;
+        }
+
+        private double Calculate(List<string> elements)
+        {
+            for (int i = 0; i < elements.Count; i++)
             {
-                string[] operands = expression.Split('-');
-                result = double.Parse(operands[0]) - double.Parse(operands[1]);
+                if (_operations.ContainsKey(elements[i]))
+                {
+                    string ope = elements[i];
+                    
+                    if(ope == "+" || ope == "-")
+                    {
+                        double a = Convert.ToDouble(elements[i - 1]);
+                        double b = Convert.ToDouble(elements[i + 1]);
+                        double result = _operations[ope].Execute(a, b);
+
+                        elements[i - 1] = result.ToString();
+                        elements.RemoveAt(i + 1);
+                        elements.RemoveAt(i);
+                        i--;
+                    }
+                }
             }
-            else 
-            {
-                result = 0;
-            }
-            return result;
+
+            return Convert.ToDouble(elements[0]);
         }
     }
 }
