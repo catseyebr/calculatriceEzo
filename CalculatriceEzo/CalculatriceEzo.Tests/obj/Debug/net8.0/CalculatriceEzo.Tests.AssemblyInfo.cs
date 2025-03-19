@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CalculatriceEzo.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+407f89611a43b5575a451595af3818f2d7501543")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af9b42d3316210e9a5d75830f3ec59c21edfc8f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CalculatriceEzo.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CalculatriceEzo.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

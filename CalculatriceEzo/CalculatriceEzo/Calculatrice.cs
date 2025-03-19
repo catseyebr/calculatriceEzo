@@ -5,6 +5,7 @@ namespace CalculatriceEzo
     public class Calculatrice
     {
         private readonly Dictionary<string, IOperation> _operations;
+        private readonly Dictionary<string, IUnitaireOperation> _uniOperations;
         public Calculatrice()
         {
             _operations = new Dictionary<string, IOperation>
@@ -15,10 +16,16 @@ namespace CalculatriceEzo
                 { "/", new Division()},
                 { "^", new Power()}
             };
+
+            _uniOperations = new Dictionary<string, IUnitaireOperation>
+            {
+                { "sqrt", new SquareRoot() }
+            };
         }
 
         public double EvaluerExpression(string expression)
         {
+            expression = ResoudreUnitaireOps(expression);
             expression = ResoudreParentheses(expression);
 
             var elements = ClassifierExpression(expression);
@@ -44,6 +51,27 @@ namespace CalculatriceEzo
                 expression = expression.Substring(0, start) + subresult + expression.Substring(end + 1);
             }
 
+            return expression;
+        }
+
+        private string ResoudreUnitaireOps(string expression)
+        {
+            foreach (var op in _uniOperations)
+            {
+                while (expression.Contains(op.Key))
+                {
+                    int start = expression.IndexOf(op.Key) + op.Key.Length;
+                    if (expression[start] != '(') throw new ArgumentException($"L’operation {op.Key} doit être suivie de parenthèses!");
+
+                    int end = expression.IndexOf(')', start);
+                    if (end == -1) throw new ArgumentException($"Parenthèses déséquilibrées pour l’operation {op.Key}!");
+
+                    string subExpression = expression.Substring(start + 1, end - start - 1);
+                    double value = op.Value.Execute(Convert.ToDouble(subExpression));
+
+                    expression = expression.Substring(0, expression.IndexOf(op.Key)) + value + expression.Substring(end+1);
+                }
+            }
             return expression;
         }
 
